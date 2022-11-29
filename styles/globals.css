@@ -5,6 +5,11 @@
 }
 
 body,
-input {
+input,
+button {
   font-family: "League Spartan", sans-serif;
+}
+
+button {
+  cursor: pointer;
 }

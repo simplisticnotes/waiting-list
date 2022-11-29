@@ -1,0 +1,129 @@
+$black: #0A0908;
+$brown: #49111C;
+$silver: #F2F4F3;
+
+.topContainer {
+    background-color: $silver;
+    padding-top: 30px;
+    padding-bottom: 150px;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 2rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+        }
+    }
+
+    .hero {
+        max-width: 670px;
+        text-align: center;
+        margin: 100px auto 0 auto;
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.5rem;
+        }
+
+        form {
+            border: 2px solid $black;
+            max-width: 500px;
+            display: flex;
+            margin: 50px auto 0 auto;
+            box-shadow: 1px 3px 2px 1px rgba(0, 0, 0, 0.1);
+
+            input {
+                width: 60%;
+                outline: none;
+                font-size: 1.3rem;
+                padding: 0 1.5rem;
+                border: none;
+            }
+
+            button {
+                width: 40%;
+                border: none;
+                color: white;
+                background-color: $black;
+                outline: none;
+                font-size: 1.3rem;
+                padding: 1rem 1.5rem;
+            }
+
+            @media (max-width: 500px) {
+                input, button {
+                    font-size: 1.1rem;
+                    padding-left: 0.8rem;
+                    padding-right: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+.formCaption {
+    color: #797979;
+    margin-top: 0.7rem;
+    font-size: 1.1rem;
+}
+
+
+.featuresContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 4rem;
+
+    h2 {
+        color: $brown;
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    margin-bottom: 100px;
+    margin-top: 2.5rem;
+
+    div {
+        max-width: 300px;
+        // min-width: 150px;
+        background-color: $silver;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 2rem;
+        border-radius: 5px;
+        box-shadow: 1px 3px 2px 1px rgba(0, 0, 0, 0.1);
+
+        img {
+            width: 3rem;
+        }
+
+        p {
+            font-size: 1.8rem;
+            margin-top: 1.5rem;
+            font-weight: 500;
+            line-height: 2rem;
+        }
+    }
+}
