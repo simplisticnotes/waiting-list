@@ -19,8 +19,13 @@ $silver: #F2F4F3;
             width: 2rem;
         }
 
-        h3 {
+        p {
             font-size: 2rem;
+            font-weight: bold;
+
+            span {
+                display: none;
+            }
         }
     }
 

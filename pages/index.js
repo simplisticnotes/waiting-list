@@ -7,12 +7,20 @@ function HomePage() {
     <>
       <Head>
         <title>Simplistic Notes - Write Anything, Write Securely</title>
+        <meta
+          name="description"
+          content="Simplistic Notes is a private, secure, and simple way to take notes.
+            Write anything to help you remember later without the worry of
+            someone else reading your notes."
+        />
       </Head>
 
       <section className={classes.topContainer}>
         <header>
           <img src="/logo.svg" alt="Simplistic Notes Logo" />
-          <h3>implistic Notes</h3>
+          <p>
+            <span>S</span>implistic Notes
+          </p>
         </header>
 
         <section className={classes.hero}>
@@ -27,9 +35,7 @@ function HomePage() {
             <input type="email" placeholder="Email..." required />
             <button>Join Waiting List</button>
           </form>
-          <p className={classes.formCaption}>
-            Get early access to the software
-          </p>
+          <p className={classes.formCaption}>Get early access</p>
         </section>
       </section>
 
