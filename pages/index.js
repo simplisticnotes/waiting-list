@@ -1,8 +1,13 @@
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import classes from "../styles/home.module.scss";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 function HomePage() {
+  const [email, setEmail] = useState("");
+
+  const changeEmail = (e) => setEmail(e.target.value);
+
   return (
     <>
       <Head>
@@ -31,10 +36,37 @@ function HomePage() {
             someone else reading your notes.
           </p>
 
-          <form>
-            <input type="email" placeholder="Email..." required />
-            <button>Join Waiting List</button>
-          </form>
+          <MailchimpSubscribe
+            url="https://simplisticnotes.us11.list-manage.com/subscribe/post?u=12988138a20760393aa24795b&amp;id=071352879e&amp;f_id=008799e0f0"
+            render={({ subscribe, status, message }) => (
+              <>
+                <form
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    subscribe({ EMAIL: email });
+                  }}
+                >
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={changeEmail}
+                    placeholder="Email..."
+                    required
+                  />
+                  <button>Join Waiting List</button>
+                </form>
+                {status === "sending" && (
+                  <p className={classes.formCaption}>Subscribing...</p>
+                )}
+                {status === "success" && (
+                  <p className={classes.formCaption}>Subscribed Successfully</p>
+                )}
+                {status === "error" && (
+                  <p className={classes.formCaption}>{message}</p>
+                )}
+              </>
+            )}
+          />
           <p className={classes.formCaption}>Get early access</p>
         </section>
       </section>
